@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>焦点访谈</title>
+    <style>
+        html,body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        body {
+            background-color: #e65666;
+            position: relative;
+        }
+        #loading {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        #loading > div:first-child {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: transparent;
+
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+
+            animation: animate-border 1s linear 0s infinite;
+        }
+        @keyframes animate-border {
+            0% {
+                transform: rotateZ(0deg) scale(0.8)
+            }
+            50% {
+                transform: rotateZ(180deg) scale(1)
+            }
+            100% {
+                transform: rotateZ(360deg) scale(0.8)
+            }
+        }
+
+        #loading > div:last-child {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+
+            margin-top: -22px;
+            margin-left: 12px;
+
+            animation: animate-center 1s linear 0s infinite;
+        }
+
+        @keyframes animate-center {
+            0% {
+                transform: scale(1.2)
+            }
+            50% {
+                transform: scale(0.8)
+            }
+            100% {
+                transform: scale(1.2)
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div></div>
+        <div></div>  
+    </div>
+</body>
+</html>
